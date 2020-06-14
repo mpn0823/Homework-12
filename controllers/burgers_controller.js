@@ -15,7 +15,7 @@ router.post(`/api/add-burger/`, async(req, res) => {
 });
 
 router.post(`/api/eat-burger/`, async(req, res) => {
-    res.json(await burger.consumeBurger(req.body.name));
+    res.json(await burger.eatBurger(req.body.name));
 });
 
 module.exports = router;

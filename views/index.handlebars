@@ -36,17 +36,23 @@
   document.querySelectorAll("button").forEach(x =>{
     if(x.id !== "submit"){
       x.addEventListener("click",()=>{
-        const burgerName = x.parentElement.innerText.slice(0,-x.innerText.length);
-        console.log(burgerName);
-
+        const burgerName = x.parentElement.innerText.slice(0,-x.innerText.length).trim();
+        console.log(burgerName.length);
+        fetch("/api/eat-burger",{
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({name: burgerName})
+        });
       });
     }else{
       x.addEventListener("click",()=>{
         const burgerName = document.querySelector("input").value.trim();
-        console.log(burgerName);
+        fetch("/api/add-burger",{
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({name: burgerName})
+        });
       });
     }
-    
   });
-  
 </script>
