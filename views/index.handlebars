@@ -25,8 +25,28 @@
   {{/each}}
 </ul>
 
-<form>
+<div>
   <label>Add a burger to the menu</label><br>
   <input type="text">
-  <input type="submit" value="Submit">
-</form>
+  <button id="submit">Submit</button>
+</div>
+
+{{!-- Putting script here as it's easier to test --}}
+<script>
+  document.querySelectorAll("button").forEach(x =>{
+    if(x.id !== "submit"){
+      x.addEventListener("click",()=>{
+        const burgerName = x.parentElement.innerText.slice(0,-x.innerText.length);
+        console.log(burgerName);
+
+      });
+    }else{
+      x.addEventListener("click",()=>{
+        const burgerName = document.querySelector("input").value.trim();
+        console.log(burgerName);
+      });
+    }
+    
+  });
+  
+</script>
