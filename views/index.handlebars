@@ -43,6 +43,7 @@
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({name: burgerName})
         });
+        location.reload();
       });
     }else{
       x.addEventListener("click",()=>{
@@ -52,6 +53,7 @@
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({name: burgerName})
         });
+        location.reload();
       });
     }
   });

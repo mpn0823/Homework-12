@@ -11,11 +11,17 @@ router.get(`/`, async(_, res) => {
 });
 
 router.post(`/api/add-burger/`, async(req, res) => {
-    res.json(await burger.addBurger(req.body.name));
+    await burger.addBurger(req.body.name);
+    const burgers = await burger.selectAllBurgers();
+    res.sendStatus(200).end();
+
 });
 
 router.post(`/api/eat-burger/`, async(req, res) => {
-    res.json(await burger.eatBurger(req.body.name));
+    await burger.eatBurger(req.body.name);
+    const burgers = await burger.selectAllBurgers();
+    res.sendStatus(200).end();
+
 });
 
 module.exports = router;
