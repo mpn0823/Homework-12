@@ -31,30 +31,3 @@
   <button id="submit">Submit</button>
 </div>
 
-{{!-- Putting script here as it's easier to test --}}
-<script>
-  document.querySelectorAll("button").forEach(x =>{
-    if(x.id !== "submit"){
-      x.addEventListener("click",()=>{
-        const burgerName = x.parentElement.innerText.slice(0,-x.innerText.length).trim();
-        console.log(burgerName.length);
-        fetch("/api/eat-burger",{
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({name: burgerName})
-        });
-        location.reload();
-      });
-    }else{
-      x.addEventListener("click",()=>{
-        const burgerName = document.querySelector("input").value.trim();
-        fetch("/api/add-burger",{
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({name: burgerName})
-        });
-        location.reload();
-      });
-    }
-  });
-</script>

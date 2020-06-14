@@ -9,11 +9,3 @@ const burger = {
 };
 
 module.exports = burger;
-
-// (async() => {
-//     console.table(await burger.selectAllBurgers());
-//     console.log(await burger.addBurger(`Royale with Cheese`));
-//     console.table(await burger.selectAllBurgers());
-//     console.log(await burger.eatBurger(`Royale with Cheese`));
-//     console.table(await burger.selectAllBurgers());
-// })();

@@ -17,10 +17,3 @@ const orm = {
 }
 
 module.exports = orm;
-
-// (async() => {
-//     console.table(await orm.selectAll());
-//     console.log(await orm.insertOne(`Royale with Cheese`, false));
-//     console.log(await orm.updateOne(`Royale with Cheese`, true));
-//     console.table(await orm.selectAll());
-// })();
