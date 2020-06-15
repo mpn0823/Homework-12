@@ -6,14 +6,14 @@ const util = require(`util`);
 const query = util.promisify(connection.query.bind(connection));
 
 const orm = {
-    selectAll: async() =>
-        await query(`select * from burgers`),
+    selectAll: () =>
+        query(`select * from burgers`),
 
-    insertOne: async(str, bool) =>
-        await query(`insert into burgers(burger_name, devoured) values(?, ?)`, [str, bool]),
+    insertOne: (str, bool) =>
+        query(`insert into burgers(burger_name, devoured) values(?, ?)`, [str, bool]),
 
-    updateOne: async(str, bool) =>
-        await query(`update burgers set devoured = ? where burger_name = ?`, [bool, str])
+    updateOne: (str, bool) =>
+        query(`update burgers set devoured = ? where burger_name = ?`, [bool, str])
 }
 
 module.exports = orm;

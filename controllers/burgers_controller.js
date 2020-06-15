@@ -8,17 +8,15 @@ const router = express.Router();
 router.get(`/`, async(_, res) => {
     const burgers = await burger.selectAllBurgers();
     res.render(`index`, { burgers });
-});
+}).catch(() => console.log(`Promise not resolved: ${burgers}`));
 
 router.post(`/api/add-burger/`, async(req, res) => {
     await burger.addBurger(req.body.name);
-    const burgers = await burger.selectAllBurgers();
     res.sendStatus(200).end();
 });
 
 router.post(`/api/eat-burger/`, async(req, res) => {
     await burger.eatBurger(req.body.name);
-    const burgers = await burger.selectAllBurgers();
     res.sendStatus(200).end();
 });
 
