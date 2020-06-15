@@ -1,8 +1,8 @@
-drop database if exists burgers_db;
 
-create database burgers_db;
 
-use burgers_db;
+-- create database burgers_db;
+
+-- use burgers_db;
 
 create table burgers(
     id int auto_increment not null,
@@ -11,16 +11,19 @@ create table burgers(
     primary key(id)
 );
 
-insert into burgers(burger_name, devoured)
-values('Mushroom Swiss Burger', false);
+SELECT * FROM burgers;
 
-insert into burgers(burger_name, devoured)
-values('Baconator Burger', false);
 
-insert into burgers(burger_name, devoured)
-values("Noah's Arc Burger", false);
+-- insert into burgers(burger_name, devoured)
+-- values('Mushroom Swiss Burger', false);
 
-insert into burgers(burger_name, devoured)
-values('Arnold SwarzenEgger Burger', false);
+-- insert into burgers(burger_name, devoured)
+-- values('Baconator Burger', false);
 
-select * from burgers;
+-- insert into burgers(burger_name, devoured)
+-- values("Noah's Arc Burger", false);
+
+-- insert into burgers(burger_name, devoured)
+-- values('Arnold SwarzenEgger Burger', false);
+
+-- select * from burgers;
