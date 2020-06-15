@@ -7,8 +7,9 @@ const router = express.Router();
 
 router.get(`/`, async(_, res) => {
     const burgers = await burger.selectAllBurgers();
+    if (err) next(err);
     res.render(`index`, { burgers });
-}).catch(() => console.log(`Promise not resolved: ${burgers}`));
+});
 
 router.post(`/api/add-burger/`, async(req, res) => {
     await burger.addBurger(req.body.name);
