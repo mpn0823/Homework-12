@@ -7,7 +7,10 @@ const router = express.Router();
 
 router.get(`/`, async(_, res) => {
     const burgers = await burger.selectAllBurgers();
-    if (err) next(err);
+    if (err) {
+        next(err);
+        console.log(err);
+    }
     res.render(`index`, { burgers });
 });
 
